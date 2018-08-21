@@ -1,0 +1,22 @@
+{
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"plugins": [
+		"react",
+		"prettier",
+		"jest"
+	],
+	"env": {
+		"jest/globals": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 7,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"rules": {
+		"react/prop-types": 0,
+		"prettier/prettier": "error"
+	}
+}

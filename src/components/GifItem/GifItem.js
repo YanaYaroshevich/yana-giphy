@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import "./GifItem.css";
 
 const propTypes = {
   url: PropTypes.string.isRequired
@@ -14,8 +15,6 @@ class GifItem extends Component {
     return (
       <iframe
         src={this.props.url}
-        width="480"
-        height="480"
         frameBorder="0"
         className="giphy-embed"
         allowFullScreen
@@ -24,6 +23,6 @@ class GifItem extends Component {
   }
 }
 
-GifItem.PropTypes = propTypes;
+GifItem.propTypes = propTypes;
 
 export default GifItem;

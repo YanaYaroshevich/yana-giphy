@@ -1,4 +1,6 @@
 .gif-container {
 	display: grid;
-	grid-template-rows: 33% 33% 33%;
+	grid-template-columns: auto auto auto;
+	grid-gap: 10px;
+	background-color: #f3e9b4;
 }

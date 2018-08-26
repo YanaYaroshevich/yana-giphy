@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import constants from "../../constants";
 import GifItem from "../GifItem/GifItem";
+import "./GifItemList.css";
 
 class GifItemList extends Component {
   constructor() {
@@ -9,7 +10,7 @@ class GifItemList extends Component {
     this.state = { data: [] };
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     const self = this;
     axios
       .get(`${constants.baseUrl}/v1/gifs/trending`, {
@@ -21,7 +22,7 @@ class GifItemList extends Component {
       .then(res => {
         self.setState({ data: res.data.data });
       });
-  };
+  }
 
   render() {
     return (

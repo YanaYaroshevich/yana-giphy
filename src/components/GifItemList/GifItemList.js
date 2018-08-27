@@ -28,7 +28,7 @@ class GifItemList extends Component {
     return (
       <div className="gif-container">
         {this.state.data.map(item => (
-          <GifItem url={item.embed_url} />
+          <GifItem key={item.id} url={item.embed_url} />
         ))}
       </div>
     );

@@ -1,38 +1,24 @@
 import React, { Component } from "react";
-import axios from "axios";
-import constants from "../../constants";
 import GifItem from "../GifItem/GifItem";
 import "./GifItemList.css";
+import PropTypes from "prop-types";
+
+const propTypes = {
+  items: PropTypes.array.isRequired
+};
 
 class GifItemList extends Component {
-  constructor() {
-    super();
-    this.state = { data: [] };
-  }
-
-  componentDidMount() {
-    const self = this;
-    axios
-      .get(`${constants.baseUrl}/v1/gifs/trending`, {
-        params: {
-          api_key: `${constants.apiKey}`,
-          limit: 20
-        }
-      })
-      .then(res => {
-        self.setState({ data: res.data.data });
-      });
-  }
-
   render() {
     return (
       <div className="gif-container">
-        {this.state.data.map(item => (
+        {this.props.items.map(item => (
           <GifItem key={item.id} url={item.embed_url} />
         ))}
       </div>
     );
   }
 }
+
+GifItemList.propTypes = propTypes;
 
 export default GifItemList;

@@ -6,13 +6,15 @@
 		"jest"
 	],
 	"env": {
-		"jest/globals": true
+		"jest/globals": true,
+		"es6": true
 	},
 	"parserOptions": {
 		"ecmaVersion": 7,
 		"sourceType": "module",
 		"ecmaFeatures": {
-			"jsx": true
+			"jsx": true,
+			"experimentalObjectRestSpread": true
 		}
 	},
 	"rules": {

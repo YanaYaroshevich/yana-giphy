@@ -5,12 +5,15 @@ import { createEpicMiddleware, combineEpics } from "redux-observable";
 import { reducer as homeReducer } from "../../scenes/Home/services/reducer";
 import homeEpic from "../../scenes/Home/services/epics";
 
+import { reducer as randomReducer } from "../../scenes/Random/services/reducer";
+import randomEpic from "../../scenes/Random/services/epics";
+
 import api from "../api/api";
 
 export default history => {
   const routerHistoryMiddleware = routerMiddleware(history);
 
-  const rootEpic = combineEpics(homeEpic);
+  const rootEpic = combineEpics(homeEpic, randomEpic);
 
   const epicMiddleware = createEpicMiddleware({
     dependencies: {
@@ -20,7 +23,8 @@ export default history => {
 
   const reducers = combineReducers({
     router: routerReducer,
-    home: homeReducer
+    home: homeReducer,
+    random: randomReducer
   });
 
   const store = createStore(

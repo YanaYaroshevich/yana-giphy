@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 
 import Header from "../components/Header/Header";
 import Home from "../scenes/Home/Home";
+import Random from "../scenes/Random/Random";
 
 export class Main extends Component {
   render() {
@@ -10,6 +11,7 @@ export class Main extends Component {
       <div>
         <Header />
         <Route exact path="/" component={Home} />
+        <Route path={"/random"} component={Random} />
       </div>
     );
   }
